@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8"/>
+	<title>E-Commerce</title>
+	<!-- Folha de estilos do Bootstrap-->
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+
+</head>
+
+<body>
+	<div id="app" class="container">
+	Incluir produto
+		<form v-on:submit.prevent>
+		  <div class="form-group">
+		    <label for="nome">Nome</label>
+		    <input type="text" class="form-control" id="nome" v-model="produto.nome">
+		  </div>
+		  <div class="form-group">
+		    <label for="descricao">Descrição</label>
+		    <textarea class="form-control" id="descricao" rows="2" v-model="produto.descricao"></textarea>
+		  </div>
+		  <div class="form-group">
+		    <label for="categoria">Categoria</label>
+			<select class="form-control" id="categoria" v-model="produto.idCategoria">
+				<option v-for="opt in categorias" v-bind:value="opt.id">{{opt.nome}}</option>
+			</select>		    
+		  </div>
+		  <div class="form-group">
+		    <label for="funcionario">Funcionario</label>
+			<select class="form-control" id="funcionario" v-model="produto.idFuncionario">
+				<option v-for="opt in funcionarios" v-bind:value="opt.id">{{opt.nome}}</option>
+			</select>		    
+		  </div>
+		  <div class="form-group">
+		    <label for="estoque">Quantidade em Estoque</label>
+		    <input type="number" class="form-control" id="estoque" v-model="produto.qtdEstoque">
+		  </div>
+		  <div class="form-group">
+		    <label for="valor">Valor</label>
+		    <input type="number" class="form-control" id="valor" v-model="produto.valor">
+		  </div>
+		  <div class="form-group">
+		    <label for="foto">Foto</label>
+		    <input type="file" class="form-control-file" id="foto" >
+		  </div>		  
+		  <button v-on:click="salvarProduto()" class="btn btn-primary">Submit</button>
+		  <button class="btn btn-primary">Submit</button>
+		</form>	
+	
+	Lista Produtos 
+	<table class="table">
+	  <thead>
+	    <tr>
+	      <th scope="col">#</th>
+	      <th scope="col">Nome</th>
+	      <th scope="col">Categoria</th>
+	      <th scope="col">Estoque</th>
+	      <th scope="col">Valor</th>
+	      <th scope="col">Foto</th>
+	    </tr>
+	  </thead>
+	  <tbody>
+	    <tr v-for="produto in produtos">
+	      <th scope="row" v-on:click="selecionaProduto(produto.id)">{{produto.id}}</th>
+	      <td>{{produto.nome}}</td>
+	      <td>{{produto.nomeCategoria}}</td>
+	      <td align="right">{{produto.qtdEstoque}}</td>
+	      <td align="right">{{produto.valor | currencydecimal}}</td>
+	      <td><img v-bind:src="produto.fotoLink" height="40px"></td>
+	    </tr>
+	  </tbody>
+	</table>
+	
+	</div>
+
+	<!--  Scripts do Bootstrap -->
+	<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+	<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+
+	<!--  Scripts do Vue.js -->
+	<script src="https://cdn.jsdelivr.net/npm/vue@2.6.12"></script>
+
+	<!--  Scripts do axios -->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.20.0/axios.min.js" integrity="sha512-quHCp3WbBNkwLfYUMd+KwBAgpVukJu5MncuQaWXgCrfgcxCJAq/fo+oqrRKOj+UKEmyMCG3tb8RB63W+EmrOBg==" crossorigin="anonymous"></script>
+
+
+
+	<!--  Scripts da aplicação -->
+	<script src="main.js" ></script>
+</body>
+</html>
