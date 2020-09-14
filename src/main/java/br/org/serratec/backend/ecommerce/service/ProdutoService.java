@@ -154,6 +154,9 @@ public class ProdutoService {
 	
 	public Foto foto(Integer id) throws DataNotFoundException {
 		Produto produtoNoBanco = findBy(id);
+		if ( produtoNoBanco.getFoto() == null) {
+			throw new DataNotFoundException("Foto não encontrada");
+		}
 		return produtoNoBanco.getFoto();
 	}
 

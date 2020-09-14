@@ -46,3 +46,15 @@ Para o cadastro de produdo foram criados dois endpoints a mais para permitir o u
 Ele é composto de apenas dois arquivos uma pagina html e um javascript. Utiliza axios para fazer o upload. É apenas um pequeno exemplo de possibilidade de upload, existem outros (como por exemplo converter a imagem em string base64 e enviá-la como atribudo do JSON).
 
 
+### Disponibilização On-Line
+
+Temporariamente, esta aplicação tambem está disponível on-line num servidor da aws disponibilizado pela [IDK Digital](https://idk.digital).  
+
+* A documentação Swagger pode ser acessada através da URL [http://residencia-ecommerce.us-east-1.elasticbeanstalk.com/swagger-ui.html](http://residencia-ecommerce.us-east-1.elasticbeanstalk.com/swagger-ui.html)
+* O mini frontend de produtos pode ser acessado em [http://residencia-ecommerce.us-east-1.elasticbeanstalk.com/](http://residencia-ecommerce.us-east-1.elasticbeanstalk.com/)
+* O console do H2 pode ser acessado em [http://residencia-ecommerce.us-east-1.elasticbeanstalk.com/h2-console](http://residencia-ecommerce.us-east-1.elasticbeanstalk.com/h2-console) com a url de conexão jdbc:h2:mem:testdb
+
+
+
+
+ 

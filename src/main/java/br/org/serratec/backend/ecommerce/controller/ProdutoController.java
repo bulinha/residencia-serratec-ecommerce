@@ -107,7 +107,6 @@ public class ProdutoController {
 	public ResponseEntity<byte[]> fotoPorId(@PathVariable Integer id) throws DataNotFoundException {
 		Foto foto = produtoService.foto(id);
 		HttpHeaders headers = new HttpHeaders();
-		if (foto==null) return null;
 		headers.add("content-type", foto.getMimetype());
 		headers.add("content-length", String.valueOf(foto.getData().length));
 		return new ResponseEntity<>(foto.getData(), headers, HttpStatus.OK);
