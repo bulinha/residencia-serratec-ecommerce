@@ -38,6 +38,7 @@ public class ClienteService {
 	@Transactional
 	public ClienteDTO inserir(ClienteDTO clienteDTO) {
 		Cliente cliente = clienteMapper.toEntity(clienteDTO);
+		cliente.getEndereco().setCliente(cliente);
 		Cliente clienteSalvoNoBd = clienteRepository.save(cliente);
 		return clienteMapper.toDTO(clienteSalvoNoBd);
 	

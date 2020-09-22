@@ -42,7 +42,7 @@ O Swagger pode ser acessado na url [http://localhost:8080/swagger-ui.html](http:
 
 ### Imagens em Produto
 
-Para o cadastro de produdo foram criados dois endpoints a mais para permitir o upload e acesso a fotos de produto. Também foi adicionado um pequeno frontend em vue.js na pasta static, que pode ser acessado direto pela url [http://localhost:8080](http://localhost:8080).
+Para o cadastro de produdo foram criados dois endpoints a mais para permitir o upload e acesso a fotos de produto. Também foi adicionado um pequeno frontend em vue.js na pasta static, que pode ser acessado direto pela url [http://localhost:5000](http://localhost:5000).
 Ele é composto de apenas dois arquivos uma pagina html e um javascript. Utiliza axios para fazer o upload. É apenas um pequeno exemplo de possibilidade de upload, existem outros (como por exemplo converter a imagem em string base64 e enviá-la como atribudo do JSON).
 
 

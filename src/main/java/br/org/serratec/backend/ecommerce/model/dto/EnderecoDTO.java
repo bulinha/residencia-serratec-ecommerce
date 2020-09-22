@@ -32,4 +32,5 @@ public class EnderecoDTO {
 
 	@NotNull
 	private String cep;
+	
 }
