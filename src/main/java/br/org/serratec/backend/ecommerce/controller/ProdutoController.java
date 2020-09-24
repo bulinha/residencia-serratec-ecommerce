@@ -49,8 +49,8 @@ public class ProdutoController {
 	 */
 	private ProdutoDTO addFotoLink(ProdutoDTO produtoDTO) {
 		URI uri = ServletUriComponentsBuilder
-			    .fromCurrentRequest()
-			    .path("/{id}/foto")
+			    .fromCurrentContextPath()
+			    .path("/produto/{id}/foto")
 			    .buildAndExpand(produtoDTO.getId())
 				.toUri();
 		produtoDTO.setFotoLink(uri.toString());
